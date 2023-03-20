@@ -1,28 +1,28 @@
-let etàminima = 0;
 
-let etàmassima = 100;
+const età = prompt('Inserisci la tua età');
+const km = prompt('Quanti km percorrerai?');
 
-
-const kmPercorsi = prompt("quanti km devi percorrere?");
-
-const etàPasseggero = prompt("quanti anni hai?");
-
-console.log("etàPasseggero, kmPercorsi")
-
-let bigliettoBase = 0,21€
-
+let etàMin = 0;
+let etàMax = 100;
+let bigliettoBase = 0.21 * km;
 console.log('Prezzo base del biglietto €', bigliettoBase);
 
-let scontoGiovani = (bigliettoBase * 20) / 100;
+let scotoGiovani = (bigliettoBase * 20) / 100;
 let scontoAnziani = (bigliettoBase * 40) / 100;
 
-let prezzo = bigliettoBase - scontoGiovani;
+let PrezzoGiovani = bigliettoBase - scotoGiovani;
 
-let prezzo = bigliettoBase - scontoAnziani;
-
-
-console.log('Sconto applicato al biglietto €', scontoGiovani);
-console.log('Sconto applicato al biglietto €', scontoAnziani);
+let prezzoAnzini = bigliettoBase - scontoAnziani;
 
 
+console.log('Sconto applicato al biglietto minorenni €', scotoGiovani);
+console.log('Sconto applicato al biglietto anziani €', scontoAnziani);
+
+if (ageUser < 18) {
+  document.getElementById('biglietto').innerHTML = 'Prezzo finale €' + Math.round(PrezzoGiovani);
+} else if (ageUser > 65){
+  document.getElementById('biglietto').innerHTML = 'Prezzo finale €' + Math.round(prezzoAnzini);
+}
+
+document.getElementById('ticket').innerHTML = 'Prezzo finale €' + Math.round(bigliettoBase);
 
